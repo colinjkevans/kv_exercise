@@ -1,3 +1,4 @@
+```
 Build a simple, maintainable key-value store by implementing two services that communicate with each other: a key-value store (KV service) and a client that tests the key-value store (test client). This project should ideally take 2 hours to complete and no more than 4 hours.
 
 The KV service should implement a basic JSON Rest API as the primary public interface. The interface must support the following operations:
@@ -41,12 +42,14 @@ Please don’t hesitate to contact us with questions for clarification. And good
 
 Please submit here:
 https://app2.greenhouse.io/tests/3cc70dcd793fbe8ec0a553bb49e44362?utm_medium=email&utm_source=TakeHomeTest
-
+```
 
 ### Assumptions
-The implementation uses flask's built-in dev server, which is not production ready. Production applications should use
-a production-ready server (e.g. uWSGI, gunicorn).
-Allowed k/v types - based on json data types, allow values to be string, number, boolean, null.
-                    keys come from URI, so only allow strings
-PUT verb can replace or create. Alternative implementation would be to return 404 for non-existent key
-POST will only create a resource. Returns 409 Conflict if the key already exists.
+
+- Allowed k/v types - values based on json data types, allowed to be string, number, boolean.
+                      keys come from URI, so only allow strings
+- PUT verb can replace or create. Alternative option would be to only replace and return 404 for non-existent key
+- POST will only create a resource. Returns 409 Conflict if the key already exists.
+- "quickly change the transport layer protocol"? 
+  - HTTP over UDP? Not sure I can do that in 2 hours. 
+  - HTTP/3? maybe hypercorn asgi server

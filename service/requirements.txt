@@ -1,0 +1,5 @@
+flask
+jsonschema
+gunicorn
+
+# hypercorn[h3]
