@@ -39,9 +39,6 @@ Please upload the code to a publicly accessible github or bitbucket account.  A 
 We understand that you have other responsibilities, so if you think you’ll need more than 5 business days, just let us know when you expect to send a reply.
 
 Please don’t hesitate to contact us with questions for clarification. And good luck!
-
-Please submit here:
-https://app2.greenhouse.io/tests/3cc70dcd793fbe8ec0a553bb49e44362?utm_medium=email&utm_source=TakeHomeTest
 ```
 
 ### Assumptions

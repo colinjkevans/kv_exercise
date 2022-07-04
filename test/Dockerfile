@@ -1,6 +1,6 @@
 FROM python:3
 
-WORKDIR /opt/kv-store
+WORKDIR /opt/kv-test-service
 
 COPY requirements.txt ./
 RUN pip install -r requirements.txt

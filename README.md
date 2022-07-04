@@ -62,29 +62,29 @@ sudo docker run -d -p 8080:8080 --name kv-service kv-service
 ```
 cd test
 sudo docker build -t 'kv-test-service' .
-sudo docker run -d -p 8080:8080 --link kv-service --name kv-service kv-service
+sudo docker run -d -p 8081:8081 --link kv-service --name kv-test-service kv-test-service
 ```
 
 Requests to the test service can be run with:
 ```
 curl \
     -X POST \
-    -H 'Content-Type: application/json' \ 
-    -d '{"baseurl": "http://kv-service:8080"}' \ 
+    -H 'Content-Type: application/json' \
+    -d '{"baseurl": "http://kv-service:8080"}' \
     http://localhost:8081/test_overwrite
 ```
 
 ```
 curl \
     -X POST \
-    -H 'Content-Type: application/json' \ 
-    -d '{"baseurl": "http://kv-service:8080"}' \ 
+    -H 'Content-Type: application/json' \
+    -d '{"baseurl": "http://kv-service:8080"}' \
     http://localhost:8081/test_deletion
 ```
 
 ## Notes on "quickly change the transport layer protocol"
-This requirement in the spec had be scratching my head a bit - it sounds like running a REST service over UDP rather
-than TCP. That seems to be
+This requirement in the spec had me scratching my head a bit - it sounds like running a REST service over UDP rather
+than TCP. That seems to be:
 - a non-trivial undertaking, since typical HTTP servers don't offer it as a configuration
 option.
 - somewhat contrary to the HTTP spec, which says HTTP should use a reliable transport.
